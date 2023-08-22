@@ -1,0 +1,13 @@
+{%extends "base.html" %}
+{%block title%}
+{%endblock%}
+{%block content%}
+<nav>
+    <ul>
+        <li><a href="{{ url_for('category', category_name='Service-Based IT Company') }}">Service-Based IT Companies</a></li>
+        <li><a href="{{ url_for('category', category_name='Product-Based IT Company') }}">Product-Based IT Companies</a></li>
+        <li><a href="{{ url_for('category', category_name='Bank') }}">Banks</a></li>
+        <li><a href="{{ url_for('category', category_name='Online Startup') }}">Online Startups</a></li>
+    </ul>
+</nav>
+{%endblock%}

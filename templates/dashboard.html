@@ -1,0 +1,59 @@
+{%extends "base.html" %}
+{%block title%}
+{%endblock%}
+{%block content%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reviews Dashboard</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        img {
+            width: 75vh;
+            height: 50vh;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reviews Dashboard</h1>
+    <table>
+        <tr>
+            <th>S.NO</th>
+            <th>REVIEWER AGE</th>
+            <th>Advantages</th>
+            <th>DISADVANTAGE</th>
+            <th>IMPROVEMENTS</th>
+            <th>RATINGS</th>
+        </tr>
+        {% set s_no = 1 %}
+        {% for review in reviews %}
+        <tr>
+            <td>{{s_no}}</td>
+            <td>{{ review.age }}</td>
+            <td>{{ review.advantages }}</td>
+            <td>{{ review.disadvantages }}</td>
+            <td>{{ review.improvements }}</td>
+            <td>{{ review.ratings}}</td>
+        </tr>
+        {% set s_no = s_no + 1 %}
+        {% endfor %}
+    </table>
+</body>
+<body>
+    <h1>Number of People Rated in Each Rating </h1>
+    <img src="{{ url_for('static', filename='ratings.png') }}" alt="Rating Graph">
+</body>
+<body>
+    <h1>Number of People Rated in Each NPS Rating </h1>
+    <img src="{{ url_for('static', filename='nps.png') }}" alt="nps Rating Graph">
+</body>
+</html>
+{%endblock%}

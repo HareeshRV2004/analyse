@@ -1,0 +1,79 @@
+{%extends "base.html" %}
+{%block title%}
+{%endblock%}
+{%block content%}
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
+
+  
+  <section id="hero">
+    <h1>Welcome to Your Website</h1>
+    <p>Your trusted partner for exceptional services</p>
+    <a href="#feedback" class="cta-button">Give Feedback</a>
+  </section>
+  
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Your website's about us content goes here.</p>
+  </section>
+  
+  <section id="features">
+    <h2>Our Special Features</h2>
+    <ul>
+      <li>Feature 1: Description of feature 1</li>
+      <li>Feature 2: Description of feature 2</li>
+      <!-- Add more features as needed -->
+    </ul>
+  </section>
+  
+  <section id="trust">
+    <h2>Why Choose Us</h2>
+    <ul>
+      <li>Trusted by thousands of satisfied customers</li>
+      <li>Ensuring the safety and security of your information</li>
+      <li>Offering the lowest prices without compromising quality</li>
+    </ul>
+  </section>
+  
+  <section id="reward">
+    <h2>Write a Review and Get Rewarded</h2><br>
+    <p>Share your experience and receive a special reward!</p><br>
+    <form action="{{ url_for('submit_feedback') }}" method="POST"><br>
+      <input type="text" name="name" placeholder="Your Name" required><br>
+      <textarea name="feedback" placeholder="Your Feedback" required></textarea><br>
+      <label><input type="checkbox" name="write_review">I want to write a review and receive a reward</label><br>
+      <button type="submit">Submit Feedback</button><br>
+    </form>
+  </section>
+  
+  <section id="privacy">
+    <h2>Privacy Policy</h2>
+    <p>Your website's privacy policy content goes here.</p>
+  </section>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+        <li><a href="#privacy">Privacy Policy</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <footer>
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+  </footer>
+  <script>
+    // Smooth scrolling effect for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+{%endblock%}
+
